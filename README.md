@@ -8,7 +8,3 @@ Endpoints:
 - '/api/summary' - returns preprocessed bonds summary data in json format
 - '/api/ranking' - returns preprocessed bonds ranking data in json format
 - '/api/plots' - returns preprocessed bonds plots data in json format
-
-
-# Deployed on Railway:
-[bonds-insights-back-end-production.up.railway.app](bonds-insights-back-end-production.up.railway.app)
