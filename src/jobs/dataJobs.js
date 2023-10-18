@@ -52,12 +52,14 @@ const initialDataJob = async () => {
       }
 
       fs.writeFile(path.join(directory, `data${i + 1}.json`), JSON.stringify(processedData[i]), (err) => {
+        console.log('WRITE ERROR')
         if (err) throw err
       })
     }
 
     console.log(`Initial data pre-processing job completed - Done at: ${new Date().toLocaleString()}}`)
   } catch (error) {
+    console.log('TOTAL ERROR')
     console.log(error)
   }
 }
