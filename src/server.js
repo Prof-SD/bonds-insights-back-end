@@ -5,15 +5,14 @@ import apiRouter from './routes/api.router.js'
 import { initialDataJob, scheduleDataJob } from './jobs/dataJobs.js'
 
 const app = express()
-const PORT = config.app.PORT || 3000
-const HOST = '0.0.0.0'
+const PORT = config.app.PORT
 
 await initialDataJob()
 scheduleDataJob()
 console.log(`Scheduled data job - Done at: ${new Date().toLocaleString()}`)
 
-app.listen(PORT, HOST, () => {
-  console.log(`Server is running on http://${HOST}:${PORT}`)
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`)
 })
 
 app.use(cors())
