@@ -53,6 +53,8 @@ const initialDataJob = async () => {
 
       fs.writeFile(path.join(directory, `data${i + 1}.json`), JSON.stringify(processedData[i]), (err) => {
         console.log('WRITE ERROR')
+        console.log(err)
+        console.log('!!!')
         if (err) throw err
       })
     }
