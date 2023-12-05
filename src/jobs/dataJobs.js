@@ -44,8 +44,8 @@ const initialDataJob = async () => {
     for (let i = 0; i < processedData?.length; i++) {
       if (fs.existsSync(path.join(directory, `data${i + 1}.json`))) {
         fs.unlink(path.join(directory, `data${i + 1}.json`), (err) => {
-          console.log('THERE WAS AN ERROR IN UNLINK')
-          console.log(err.message)
+          console.log('THERE WAS AN ERROR IN UNLINK.')
+          console.log(err)
           console.log('--------')
           if (err) throw err
         })
