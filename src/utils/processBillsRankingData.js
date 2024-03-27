@@ -39,7 +39,7 @@ export default function processBillsRankingData (bills, summary = []) {
         const secondsTimestamp = (String(timestamp).length == 10) ? (timestamp * 1000) : timestamp
         timestamps.push(secondsTimestamp)
         processedData[i].acquiredValue += transaction.dollarValue,
-        processedData[i].vestedValue += (transaction.payout * transaction.payoutTokenPrice)
+        processedData[i].vestedValue += (transaction.payout * parseFloat(String(transaction.payoutTokenPrice)))
       }
     }
     const startTimestamp = new Date(timestamps[timestamps.indexOf(Math.min(...timestamps.map(timestamp => parseInt(timestamp))))])
@@ -138,7 +138,7 @@ export default function processBillsRankingData (bills, summary = []) {
     for (let j = 0; j < bills.length; j++) {
       if (processedData[i].contract == bills[j].contractAddress) {
         const initialTokens = processedData[i].tokensRemaining + processedData[i].tokensPurchased
-        processedData[i].initialTokensValue = bills[j].payoutTokenPrice * initialTokens
+        processedData[i].initialTokensValue = parseFloat(String(bills[j].payoutTokenPrice)) * initialTokens
         if (processedData[i].initialTokensValue > 100) { break }
         trial++
         if (trial === 3) { break }

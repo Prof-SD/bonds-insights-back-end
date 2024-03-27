@@ -66,8 +66,8 @@ export default function calculateDataForPlots (data) {
         dayBillsCount++
         accumDollarAcquiredValue += data[j].dollarValue
         dayAcquiredValue += data[j].dollarValue
-        accumDollarVestedValue += data[j].payout * data[j].payoutTokenPrice
-        dayVestedValue += data[j].payout * data[j].payoutTokenPrice
+        accumDollarVestedValue += data[j].payout * parseFloat(String(data[j].payoutTokenPrice))
+        dayVestedValue += data[j].payout * parseFloat(String(data[j].payoutTokenPrice))
         // If wallet has not been seen in lifetime:
         if (!walletsCounted.find(wallet => wallet == data[j].createdAddressOwner)) {
           accumWalletsCount++
