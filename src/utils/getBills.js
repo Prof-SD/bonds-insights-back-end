@@ -13,7 +13,7 @@ export async function getBills (data) {
 
   const completeTransactions = []
   for (let i = 0; i < json.length; i++) {
-    if (Object.keys(json[i]).length == 13) {
+    if (Object.keys(json[i]).length == 14) {
       completeTransactions.push(json[i])
     }
   }
