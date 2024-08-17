@@ -1,6 +1,6 @@
 const APIS = {
-  PROD: 'https://api-v2.apeswap.finance/bills/summary',
-  STAGE: 'https://apeswap-api-v2-pr-75.herokuapp.com/bills/summary'
+  PROD: 'https://api.ape.bond/bills/summary',
+  STAGE: 'https://staging-api.ape.bond/bills/summary'
 }
 
 const CURRENT_API = APIS.PROD
