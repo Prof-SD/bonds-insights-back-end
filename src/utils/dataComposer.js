@@ -14,9 +14,11 @@ export const dataComposer = async () => {
         throw new Error('Too many failed fetches - aborting dataComposer! - Check the API! - Will wait for next scheduled fetch!')
       }
 
-      setTimeout(() => {}, 100)
+      // setTimeout(() => {}, 100)
 
-      const response = await axios.get(`${CURRENT_API}/purchases?page=${page}`)
+      // * This call takes around 11 seconds to complete, so removing the above delay.
+      // * Also increasing the limit to 5000 to speed up the process, decreasing the number of calls and avoiding rate limiting.
+      const response = await axios.get(`${CURRENT_API}/purchases?limit=5000&page=${page}`)
 
       if (response?.status === 200) {
         const { actualPage, pages, data } = response?.data
